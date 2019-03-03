@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://haochen95.com/"/>
-  <updated>2019-03-01T16:06:29.121Z</updated>
+  <updated>2019-03-03T10:58:02.355Z</updated>
   <id>http://haochen95.com/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android开发路线图</title>
+    <link href="http://haochen95.com/2019/03/03/Android%E5%BC%80%E5%8F%91%E8%B7%AF%E7%BA%BF%E5%9B%BE/"/>
+    <id>http://haochen95.com/2019/03/03/Android开发路线图/</id>
+    <published>2019-03-03T10:57:27.000Z</published>
+    <updated>2019-03-03T10:58:02.355Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://images.cnblogs.com/cnblogs_com/haochen273/1389248/o_47685-20161017144827185-112405259.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://images.cnblogs.com/cnblogs_com/haochen273/1389248/o_47685-20161017144827185-112405259.jpg&quot; alt&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Android Development" scheme="http://haochen95.com/categories/Android-Development/"/>
+    
+    
+      <category term="Android" scheme="http://haochen95.com/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>加密测试</title>
     <link href="http://haochen95.com/2019/03/02/%E5%8A%A0%E5%AF%86%E6%B5%8B%E8%AF%95/"/>
     <id>http://haochen95.com/2019/03/02/加密测试/</id>
     <published>2019-03-01T16:04:41.000Z</published>
     <updated>2019-03-01T16:06:29.121Z</updated>
     
-    <content type="html"><![CDATA[<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="密码为“你好”的拼音" />    <label for="pass">密码为“你好”的拼音</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX1/JM/Oip2oXdVyY2t7X24K+hWqKBXqCUzYFC6uQnCGS67tTs+Q8AioXrEFj1P6Njip/YIR4yavgPfaRAmHqvtHMrGTpS7sXlZONX9DzGLW1YZrXZQcdiA+zBuOQHjkqx55SjoVQvgGyQyJhTyicso7JK9rAYBuUVqEuxiStyDNdyV5zlHZvEgecFGAYAMwWzvekJ5SW5WJqSOg1BmZhvgXHj/Tsl31o0QsS6qv/HxAoNF3jKwhHoaefsx3vb0N3ayI/B9iw9GKdzFfZwY0NPqNEc5sBUJZwVSJBu7C7RW5yGjOMZXbmhIn3yUj+X3+2amxUp+/0ioMrTA==</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script><div id="hbe-security">  <div class="hbe-input-container">  <input type="password" class="hbe-form-control" id="pass" placeholder="密码为“你好”的拼音" />    <label for="pass">密码为“你好”的拼音</label>    <div class="bottom-line"></div>  </div></div><div id="decryptionError" style="display: none;">Incorrect Password!</div><div id="noContentError" style="display: none;">No content to display!</div><div id="encrypt-blog" style="display:none">U2FsdGVkX19U3UtktT26T1IS9fKvLWgK3TfnK/kw0GFboUBA5fLJaNowY6sEU+Z/uw7t4dgyOy+5l6qG0+20nvL2HpcYbWY9ud/tDZtySBS5KS25yhN3u03H98EVy8+tGFVHZ49SysDvZURnPjTLmuiqZh3PUYbImnO8SeUBe6Hpvi9FmfvlScmLYACsuyHVxba4mcYppIENSz371TNRoMcanJvY6JH/+Isv77YrsKOuuG1f7camsbT5724Vrw/IM71zXWuq3eFyYbZ3bd4LVit+OdHIas+Eqa1xtHlShSJaOXGq7KfAhqXvMxjjpnP3DT9aYsCAkUjyaYTBfjtLCA==</div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
     
     <summary type="html">
     
