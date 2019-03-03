@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+
+  <meta name="google-site-verification" content="YLSH5RAFSCr1mqGfwyN2GgQUZ7Cc9YlvlDGKay9dPCQ">
+
+
+
+  <meta name="msvalidate.01" content="C345A7F174B9A2B6C794A7514E66D101">
+
+
+
+
+
+  <meta name="baidu-site-verification" content="u9IuhXtBkI">
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=7.0.1">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.MongoDB简介1.1.MongoDB特点 模式自由：可以将不同格式的文档存在同一个数据库中 面向集合的储存： 适合储存JSON风格文件的形式 完整的索引支持：对任何书写可索引 复制和高可用性： 支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制 自动分片： 支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器 丰富的查询： 支持丰富的查询表达方式 快速就地">
+<meta name="keywords" content="MongoDb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB语法大全">
+<meta property="og:url" content="http://haochen95.com/2019/03/02/MongoDB语法大全/index.html">
+<meta property="og:site_name" content="Unknown404">
+<meta property="og:description" content="1.MongoDB简介1.1.MongoDB特点 模式自由：可以将不同格式的文档存在同一个数据库中 面向集合的储存： 适合储存JSON风格文件的形式 完整的索引支持：对任何书写可索引 复制和高可用性： 支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制 自动分片： 支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器 丰富的查询： 支持丰富的查询表达方式 快速就地">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-01T15:58:59.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB语法大全">
+<meta name="twitter:description" content="1.MongoDB简介1.1.MongoDB特点 模式自由：可以将不同格式的文档存在同一个数据库中 面向集合的储存： 适合储存JSON风格文件的形式 完整的索引支持：对任何书写可索引 复制和高可用性： 支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制 自动分片： 支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器 丰富的查询： 支持丰富的查询表达方式 快速就地">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Unknown404" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://haochen95.com/2019/03/02/MongoDB语法大全/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>MongoDB语法大全 | Unknown404</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/haochen95" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Unknown404</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Stay Hungry,Stay Foolish</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首&emsp;&emsp;页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于博主</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标&emsp;&emsp;签<span class="badge">8</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分&emsp;&emsp;类<span class="badge">7</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归&emsp;&emsp;档<span class="badge">18</span></a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜&emsp;&emsp;索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://haochen95.com/2019/03/02/MongoDB语法大全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Unknown404">
+      <meta itemprop="description" content="Be proud of who you are, and not ashamed of how someone else sees you">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Unknown404">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MongoDB语法大全
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		  
+		  
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-02 00:58:21 / 修改时间：00:58:59" itemprop="dateCreated datePublished" datetime="2019-03-02T00:58:21+09:00">2019-03-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/03/02/MongoDB语法大全/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/02/MongoDB语法大全/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2019/03/02/MongoDB语法大全/" class="leancloud_visitors" data-flag-title="MongoDB语法大全">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-MongoDB简介"><a href="#1-MongoDB简介" class="headerlink" title="1.MongoDB简介"></a>1.MongoDB简介</h1><h2 id="1-1-MongoDB特点"><a href="#1-1-MongoDB特点" class="headerlink" title="1.1.MongoDB特点"></a>1.1.MongoDB特点</h2><ul>
+<li>模式自由：可以将不同格式的文档存在同一个数据库中</li>
+<li>面向集合的储存： 适合储存JSON风格文件的形式</li>
+<li>完整的索引支持：对任何书写可索引</li>
+<li>复制和高可用性： 支持服务器之间的数据复制，支持主-从模式及服务器之间的相互复制</li>
+<li>自动分片： 支持云级别的伸缩性：自动分片功能支持水平的数据库集群，可动态添加额外的机器</li>
+<li>丰富的查询： 支持丰富的查询表达方式</li>
+<li>快速就地更新：查询优化器会分析查询表达式，并生成一个搞笑的额查询计划</li>
+<li>搞笑的传统储存方法，支持二进制数据及大型对象，比如图片</li>
+</ul>
+<h2 id="1-2-MongoDB与MySQL的区别"><a href="#1-2-MongoDB与MySQL的区别" class="headerlink" title="1.2.MongoDB与MySQL的区别"></a>1.2.MongoDB与MySQL的区别</h2><table>
+<thead>
+<tr>
+<th>MySQL术语</th>
+<th>MongoDB术语</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database</td>
+<td>database</td>
+<td>数据库</td>
+</tr>
+<tr>
+<td>table</td>
+<td>collection</td>
+<td>数据库表/集合</td>
+</tr>
+<tr>
+<td>row</td>
+<td>document</td>
+<td>数据记录行/文档</td>
+</tr>
+<tr>
+<td>column</td>
+<td>field</td>
+<td>数据字段/域</td>
+</tr>
+<tr>
+<td>index</td>
+<td>index</td>
+<td>索引</td>
+</tr>
+<tr>
+<td>table joins</td>
+<td></td>
+<td>表连接，MongoDB不支持</td>
+</tr>
+<tr>
+<td>primary key</td>
+<td>primary key</td>
+<td>主见</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-3-MongoDB三元素"><a href="#1-3-MongoDB三元素" class="headerlink" title="1.3.MongoDB三元素"></a>1.3.MongoDB三元素</h2><ul>
+<li>数据库</li>
+</ul>
+<p>一个集合的物理容器，一个数据库中科院包含多个文档</p>
+<ul>
+<li>文档： 就是SQL的行</li>
+</ul>
+<p>一个对象，由键值对组成，是json的扩展</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;name&apos;:&apos;guojing&apos;, &apos;gender&apos;:&apos;男&apos;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>集合：就是SQL中的表</li>
+</ul>
+<p>类似SQL中的表，储存多个文档，结构不固定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;name&apos;:&apos;guojing&apos;, &apos;gender&apos;:&apos;男&apos;&#125;</span><br><span class="line">&#123;&apos;name&apos;:&apos;hua&apos;, &apos;age&apos;:20&#125;</span><br><span class="line">&#123;&apos;name&apos;:&apos;shxhx&apos;, &apos;hero&apos;:&apos;1998&apos;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-window中启动mongodb的服务"><a href="#1-4-window中启动mongodb的服务" class="headerlink" title="1.4. window中启动mongodb的服务"></a>1.4. window中启动mongodb的服务</h2><ol>
+<li>首先在官网下载安装好数据库</li>
+<li>将MongoDB添加到 环境变量<ul>
+<li>找到MongoDB的bin文件夹：<code>C:\Program Files\MongoDB\Server\4.0\bin</code></li>
+<li>打开<code>计算机-属性-高级系统设置-环境变量-系统变量-path-编辑-粘贴上面的bin地址</code></li>
+</ul>
+</li>
+<li>在CMD中输入<code>mongo</code>就可以进入服务了</li>
+</ol>
+<h1 id="2-数据库的语法"><a href="#2-数据库的语法" class="headerlink" title="2. 数据库的语法"></a>2. 数据库的语法</h1><h2 id="2-1-数据库语法"><a href="#2-1-数据库语法" class="headerlink" title="2.1. 数据库语法"></a>2.1. 数据库语法</h2><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db</td>
+<td>查看当前数据库</td>
+</tr>
+<tr>
+<td>show dbs</td>
+<td>查看所有数据库</td>
+</tr>
+<tr>
+<td>use 数据库名字</td>
+<td>使用数据库(没有的话自动创建)</td>
+</tr>
+<tr>
+<td>db.dropDatabase()</td>
+<td>删除当前数据库</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-1-集合语法"><a href="#2-1-集合语法" class="headerlink" title="2.1. 集合语法"></a>2.1. 集合语法</h2><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>db.createCollection(集合名字，其他选项)</td>
+<td>创建集合</td>
+</tr>
+<tr>
+<td>show collections</td>
+<td>查看当前数据库的集合</td>
+</tr>
+<tr>
+<td>db.集合名字.drop()</td>
+<td>删除一个集合</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-2-支持的数据类型"><a href="#2-2-支持的数据类型" class="headerlink" title="2.2. 支持的数据类型"></a>2.2. 支持的数据类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ObjectID</td>
+<td>文档ID：保证文档的唯一性</td>
+</tr>
+<tr>
+<td>String</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>布尔</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>浮点</td>
+</tr>
+<tr>
+<td>Arrays</td>
+<td>数组和列表</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>嵌入式文档</td>
+</tr>
+<tr>
+<td>NULL</td>
+<td>存NULL值</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>时间戳</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>存当前时间</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># capped是否设置集合大小的上限</span></span><br><span class="line">db.createCollection(<span class="string">"sub"</span>, &#123;capped: true, size :<span class="number">10</span>&#125;)  <span class="comment"># capped：true 如果db的容量大于10的话，就会覆盖</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-数据库的实际操作"><a href="#3-数据库的实际操作" class="headerlink" title="3. 数据库的实际操作"></a>3. 数据库的实际操作</h1><h2 id="3-1-增修删"><a href="#3-1-增修删" class="headerlink" title="3.1. 增修删"></a>3.1. 增修删</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 插入</span></span><br><span class="line"></span><br><span class="line">db.集合名称.insert(document)</span><br><span class="line"></span><br><span class="line">db.mask.insert(&#123;<span class="string">'name'</span>:<span class="string">'g'</span>, gender:<span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改</span></span><br><span class="line">db.集合名称.update(</span><br><span class="line">  &lt;query&gt;,   <span class="comment"># 查询条件，类型where</span></span><br><span class="line">  &lt;update&gt;, <span class="comment"># 更新操作费，类型set</span></span><br><span class="line">  &#123;multi:&lt;boolean&gt;&#125;  <span class="comment"># false：只更新找到的第一条记录,true:修改多行</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.mask.update(&#123;name:<span class="string">'hr'</span>&#125;,&#123;name: <span class="string">'ceo'</span>&#125;)          <span class="comment"># 这个会修改整个文档结构，最后用set，只修改值</span></span><br><span class="line">db.mask.update(&#123;&#125;,&#123;$set:&#123;gender:<span class="number">0</span>&#125;&#125;,&#123;multi:true&#125;)  <span class="comment"># 修改多个数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">db.集合名称.remove(</span><br><span class="line">  &lt;query&gt;,</span><br><span class="line">  &#123;</span><br><span class="line">    justOne:&lt;Boolean&gt;   <span class="comment"># TRUE：只删除一条，false：删除多条</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.mask.remove(&#123;gender:<span class="number">0</span>&#125;,&#123;justOne:true&#125;)   <span class="comment"># 只删除匹配的第一条</span></span><br><span class="line">db.mask.remove(&#123;&#125;)    <span class="comment"># 删除所有</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 简单查询</span></span><br><span class="line">db.mask.find()</span><br><span class="line"><span class="comment"># &#123; "_id" : ObjectId("5c6e7e90394099d27b230266"), "name" : "g", "gender" : 1 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-2-查询操作"><a href="#3-2-查询操作" class="headerlink" title="3.2. 查询操作"></a>3.2. 查询操作</h2><h3 id="1-基本查询"><a href="#1-基本查询" class="headerlink" title="1.基本查询"></a>1.基本查询</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础查询</span></span><br><span class="line">db.集合名称.find(&#123;条件文档&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询只返回一个数据</span></span><br><span class="line">db.集合名称.findOne():</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询结果格式化</span></span><br><span class="line">db.集合名称.find(&#123;条件文档&#125;).pretty()</span><br></pre></td></tr></table></figure>
+<h4 id="1）-比较运算符"><a href="#1）-比较运算符" class="headerlink" title="1） 比较运算符"></a>1） 比较运算符</h4><ul>
+<li>等于，直接用属性 + <code>:</code></li>
+<li>小于：$lt</li>
+<li>小于等于:$lte</li>
+<li>大于: $gt</li>
+<li>大于等于: $gte</li>
+<li>不等于: ne</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find(&#123;count:&#123;$gt:<span class="number">5</span>&#125;&#125;)  <span class="comment"># count大于5的结果</span></span><br></pre></td></tr></table></figure>
+<h4 id="2）逻辑运算符"><a href="#2）逻辑运算符" class="headerlink" title="2）逻辑运算符"></a>2）逻辑运算符</h4><ul>
+<li>and： 不需要写什么，逗号就是了</li>
+<li>or：使用$or</li>
+<li>and和or结合使用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find(&#123;age:&#123;$gte:<span class="number">18</span>&#125;, gender:<span class="number">1</span>&#125;)</span><br><span class="line">db.mask.find(&#123;$<span class="keyword">or</span>:[&#123;age:&#123;$gte:<span class="number">18</span>&#125;,gender:<span class="number">1</span>&#125;]&#125;)</span><br><span class="line">db.mask.find(&#123;$<span class="keyword">or</span>:[&#123;age:&#123;$gte:<span class="number">18</span>&#125;,gender:<span class="number">1</span>&#125;],name:<span class="string">'gj'</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3）范围运算符"><a href="#3）范围运算符" class="headerlink" title="3）范围运算符"></a>3）范围运算符</h4><ul>
+<li>使用<code>$in,$nin</code>判断是否在某个范围内</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find(&#123;age:&#123;$<span class="keyword">in</span>:[<span class="number">18</span>,<span class="number">28</span>]&#125;&#125;)  <span class="comment"># 年龄为18和28的学生</span></span><br></pre></td></tr></table></figure>
+<h4 id="4）支持正则表达式"><a href="#4）支持正则表达式" class="headerlink" title="4）支持正则表达式"></a>4）支持正则表达式</h4><ul>
+<li>使用//或者$regex编写正则表达式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find(&#123;name:&#123;$regex:<span class="string">'^黄'</span>&#125;&#125;)  <span class="comment"># 查询姓黄的学生</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-自定义函数查询"><a href="#2-自定义函数查询" class="headerlink" title="2. 自定义函数查询"></a>2. 自定义函数查询</h3><ul>
+<li>使用$where定义函数查询</li>
+<li>函数跟JS函数定义是一样的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find($where:function()&#123;<span class="keyword">return</span> this.age&gt;<span class="number">20</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3-查询的扩展功能"><a href="#3-查询的扩展功能" class="headerlink" title="3.查询的扩展功能"></a>3.查询的扩展功能</h3><h4 id="1）Limit-Skip"><a href="#1）Limit-Skip" class="headerlink" title="1）Limit + Skip"></a>1）Limit + Skip</h4><ul>
+<li>limit：用于读取指定数量的文档，表示获取几条数据</li>
+<li>skip: 跳过指定数量的文档，从第几条开始看</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find().limit(<span class="number">2</span>)   <span class="comment"># 只查询两条信息</span></span><br><span class="line">db.mask.find().skip(<span class="number">2</span>)    <span class="comment"># 查询从第三条开始的信息</span></span><br></pre></td></tr></table></figure>
+<h4 id="2）投影"><a href="#2）投影" class="headerlink" title="2）投影"></a>2）投影</h4><ul>
+<li>在查询返回的结果中，只选择必要的字段，而不是选择一个文档的整个字段—-投影</li>
+<li>在find的第二个参数中去写</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.find(&#123;&#125;,&#123;字段名称:<span class="number">1</span>,...&#125;)  <span class="comment"># 需要显示的字段，设置为1</span></span><br><span class="line"></span><br><span class="line">db.mask.find(&#123;&#125;,&#123;_id:<span class="number">0</span>, name:<span class="number">1</span>,gender:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3）排序"><a href="#3）排序" class="headerlink" title="3）排序"></a>3）排序</h4><ul>
+<li>sort方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find().sort(&#123;age:<span class="number">-1</span>&#125;)  <span class="comment"># 1为升序，-1为降序</span></span><br></pre></td></tr></table></figure>
+<h4 id="3）统计个数"><a href="#3）统计个数" class="headerlink" title="3）统计个数"></a>3）统计个数</h4><ul>
+<li>count()方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.count(&#123;条件&#125;)</span><br><span class="line"></span><br><span class="line">db.mask.count(&#123;age:&#123;gt:<span class="number">20</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3）消除重复"><a href="#3）消除重复" class="headerlink" title="3）消除重复"></a>3）消除重复</h4><ul>
+<li>distinct() 去重复</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.distinct(<span class="string">'去重字段'</span>，&#123;条件&#125;)</span><br><span class="line"></span><br><span class="line">db.mask.distinct(gender,&#123;age:&#123;$gt:<span class="number">20</span>&#125;&#125;)  <span class="comment"># age大于20的进行消除重复</span></span><br></pre></td></tr></table></figure>
+<h1 id="4-MongoDB的高级操作"><a href="#4-MongoDB的高级操作" class="headerlink" title="4.MongoDB的高级操作"></a>4.MongoDB的高级操作</h1><p>主要讲解这个数据库的高级操作，包括聚合、主从复制、分片、备份和恢复、MR、与python的交互</p>
+<h2 id="4-1-聚合aggregate"><a href="#4-1-聚合aggregate" class="headerlink" title="4.1. 聚合aggregate"></a>4.1. 聚合aggregate</h2><ul>
+<li>用于计算数据，类型sum()和avg（）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.aggregate([&#123;管道:&#123;表达式&#125;&#125;])</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>管道的含义：</strong> 将前一次操作的输出结果作为下一个命令的输入</li>
+</ol>
+<ul>
+<li>常用管道有：<ul>
+<li>$group:将集合中的文档分组，用于统计结果</li>
+<li>$match:过滤数据，只输出符合条件的文档</li>
+<li>$project:修改输入文档的结果</li>
+<li>$sort:将输入文档排序后输出</li>
+<li>$limit:限制聚合管道返回的文档数</li>
+<li>$skip:跳过指定数量的文档</li>
+<li>$unwind:将数组类型的字段进行拆分</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>表达式：</strong> 处理输入文档并输出</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">表达式：<span class="string">'$列名'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>常用表达式为：</p>
+<ul>
+<li>$sum: 计算总数</li>
+<li>$avg:</li>
+<li>$min:</li>
+<li>$max:</li>
+<li>$push:在结果文档中插入值到另外一个数组中</li>
+<li>$first:根据资源文档的排序获取第一个文档数据</li>
+<li>$last:根据资源文档的排序获取最后一个文档数据<h3 id="4-1-1-group"><a href="#4-1-1-group" class="headerlink" title="4.1.1. $group"></a>4.1.1. $group</h3></li>
+</ul>
+</li>
+<li><p>将集合中的文档分组，用于统计结果  </p>
+</li>
+<li>_id表示分组的依据，使用某个字段的格式为’$字段’  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计男生，女生的总人数</span></span><br><span class="line">db.mask.aggregate([</span><br><span class="line">   &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$sum:<span class="number">1</span>&#125;&#125;&#125;</span><br><span class="line">   &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$avg:<span class="string">'age'</span>&#125;&#125;&#125;  <span class="comment"># gender分组，对age求和</span></span><br><span class="line">   &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$frist:<span class="string">'age'</span>&#125;&#125;&#125;  <span class="comment"># 拿到第一个值</span></span><br><span class="line">   <span class="comment"># push--透视数据</span></span><br><span class="line">   &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$push:<span class="string">'age'</span>&#125;&#125;&#125;   <span class="comment"># 将基于gender的分组结果放到数组中</span></span><br><span class="line">    &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$push:<span class="string">'$$ROOT'</span>&#125;&#125;&#125;  <span class="comment"># 查看文档所有内容(gender分组情况下)</span></span><br><span class="line">   ])</span><br></pre></td></tr></table></figure>
+<p><strong>Group by null</strong> 将这个集合数据分成一组  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.mask.aggregate(</span><br><span class="line">  &#123;$group:&#123;_id:null,counter:&#123;$sum:<span class="number">1</span>&#125;&#125;&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="4-1-2-match"><a href="#4-1-2-match" class="headerlink" title="4.1.2. $match"></a>4.1.2. $match</h3><ul>
+<li>用于过滤数据  </li>
+</ul>
+<h3 id="4-1-3-project"><a href="#4-1-3-project" class="headerlink" title="4.1.3.$project"></a>4.1.3.$project</h3><ul>
+<li>将结果集中的一部分拿出来显示</li>
+</ul>
+<h3 id="4-1-4-sort"><a href="#4-1-4-sort" class="headerlink" title="4.1.4. $sort"></a>4.1.4. $sort</h3><ul>
+<li>用于排序</li>
+</ul>
+<h3 id="4-1-5-limit-skip"><a href="#4-1-5-limit-skip" class="headerlink" title="4.1.5. $limit+skip"></a>4.1.5. $limit+skip</h3><h3 id="4-1-6-unwind"><a href="#4-1-6-unwind" class="headerlink" title="4.1.6. $unwind"></a>4.1.6. $unwind</h3><ul>
+<li>将文档中的某个数组类型字段拆分成多条，每条包含数组中的一个值  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.aggregate([&#123;$unwind:<span class="string">'$字段名称'</span>&#125;])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">db.mask.aggregate([]</span><br><span class="line">  <span class="comment"># 管道1：过滤数据</span></span><br><span class="line">  &#123;$match:&#123;age:&#123;$gt:<span class="number">20</span>&#125;&#125;&#125;,  <span class="comment"># 查询大于20的信息</span></span><br><span class="line">  <span class="comment"># 管道2：分组数据</span></span><br><span class="line">  &#123;$group:&#123;_id:<span class="string">'$gender'</span>,counter:&#123;$sum:<span class="number">1</span>&#125;&#125;&#125;,</span><br><span class="line">  <span class="comment"># 管道3：设置显示哪些数据</span></span><br><span class="line">  &#123;$project:&#123;_id:<span class="number">0</span>,name:<span class="number">1</span>,age:<span class="number">1</span>&#125;&#125;,</span><br><span class="line">  <span class="comment"># 管道4：数据排序</span></span><br><span class="line">  &#123;$sort:&#123;_id:<span class="number">1</span>&#125;&#125;,</span><br><span class="line">  <span class="comment"># 管道5： 跳过多少数据</span></span><br><span class="line">  &#123;$skip:<span class="number">1</span>&#125;,</span><br><span class="line">  &#123;$limit:<span class="number">1</span>&#125;,</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-索引"><a href="#4-2-索引" class="headerlink" title="4.2. 索引"></a>4.2. 索引</h2><ul>
+<li>在大量数据中快速查找  </li>
+</ul>
+<p><strong>步骤一：创造大量数据</strong>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">100000</span>,i++)&#123;</span><br><span class="line">  db.mask.insert(name:<span class="string">'test'</span> + i, age:i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>步骤二：数据查找性能分析</strong>  </p>
+<ul>
+<li>查找姓名为<code>test10000</code>的文档,并通过explain()来进行性能分析  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.find(&#123;name:<span class="string">'test10000'</span>&#125;).explain(<span class="string">'executionStats'</span>)  <span class="comment"># 整体查询时间，96毫秒</span></span><br></pre></td></tr></table></figure>
+<p><strong>步骤三：创建索引</strong>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.集合.ensureIndex(&#123;属性:<span class="number">1</span>&#125;)  <span class="comment"># 1表示升序  </span></span><br><span class="line"></span><br><span class="line">db.mask.ensureIndex(&#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;)</span><br><span class="line">db.mask.find(&#123;name:<span class="string">'test10000'</span>&#125;).explain(<span class="string">'executionStats'</span>)  <span class="comment"># 2毫秒</span></span><br></pre></td></tr></table></figure>
+<p><strong>索引命令</strong> </p>
+<ul>
+<li>建立单一索引  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.ensureIndex(&#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;,&#123;<span class="string">"unique"</span>: true&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>建立多个索引   </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.mask.ensureIndex(&#123;<span class="string">"name"</span>:<span class="number">1</span>，<span class="string">"age"</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>查看所有索引  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.mask.getIndexes()</span><br><span class="line"></span><br><span class="line">db.mask.dropIndexes(‘索引名称’)  <span class="comment"># 删除</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-3-安全-超级管理员和普通用户创建"><a href="#4-3-安全-超级管理员和普通用户创建" class="headerlink" title="4.3. 安全:超级管理员和普通用户创建"></a>4.3. 安全:超级管理员和普通用户创建</h2><ol>
+<li><strong>创建超级管理员</strong>  </li>
+</ol>
+<p>为了更安全的访问MongoDB，需要访问者提供用户名和密码，所以我们需要在mongodb中创建用户，mongoDB采用了角色-用户-数据库的安全管理方式，每个用户被分配了一个角色，不同角色有不同的管理权限，常用角色为如下：  </p>
+<ul>
+<li>root: 只在admin数据库中可用，超级管理员</li>
+<li>read：读</li>
+<li>readwrite：读写</li>
+</ul>
+<p>下面我们来创建超级管理员：  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line">ad.createUser(&#123;</span><br><span class="line">  user:<span class="string">'admin'</span>,</span><br><span class="line">  pwd:<span class="string">'123'</span></span><br><span class="line">  roles:[&#123;role:<span class="string">'root'</span>,db:<span class="string">'admin'</span>&#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>修改配置文件，启用身份验证</strong>  </li>
+</ol>
+<p>修改配置文件<code>C:\Program Files\MongoDB\Server\4.0\bin\mongod.cfg</code>  </p>
+<p>查找<code>security</code>字段并重写为：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">security:</span><br><span class="line">    authorization: enabled</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>重启服务</strong>  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo restart # 重启服务</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>使用超级管理员登录</strong>  </li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo -u admin -p <span class="number">123</span> --authenticationDatabase admin</span><br></pre></td></tr></table></figure>
+<p>里面有以下列表  </p>
+<ul>
+<li>system.Users:通过db.system.Users.find()查看所有的user信息</li>
+<li>system.version</li>
+</ul>
+<ol start="5">
+<li><strong>为普通用户创建一个数据库</strong>  </li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use test1</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li><strong>创建普通用户</strong>  </li>
+</ol>
+<p>从超级管理员那里创建一个普通用户账户(无法访问超级数据库)  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.createUser(&#123;</span><br><span class="line">  user:<span class="string">'t1'</span>,</span><br><span class="line">  pwd:<span class="string">'123'</span>,</span><br><span class="line">  roles:[&#123;role:<span class="string">'readWrite'</span>, db:<span class="string">'test1'</span>&#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><strong>使用普通用户登录</strong></li>
+</ol>
+<p>为普通用户授权test1的数据库权限</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo -u t1 -p <span class="number">123</span> -authenticationDatabase test1</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-数据备份和恢复"><a href="#4-4-数据备份和恢复" class="headerlink" title="4.4. 数据备份和恢复"></a>4.4. 数据备份和恢复</h2><h3 id="4-1-MongoDB复制"><a href="#4-1-MongoDB复制" class="headerlink" title="4.1. MongoDB复制"></a>4.1. MongoDB复制</h3><p><strong>复制的工作原理</strong>  </p>
+<ul>
+<li>复制至少需要两个节点A，B…  </li>
+<li>A是主节点，负责处理客户端请求  </li>
+<li>其余的是从节点，负责复制主节点上的数据 </li>
+<li>节点的常见搭配方式是：一主一从、一主多从  </li>
+<li>主节点记录在其上的操作，从节点定期轮询主机诶单获取这些操作，然后对自己的数据副本执行这些操作，从而保证从节点的数据与主节点一致  </li>
+<li>主节点与丛节点进行数据交互保障数据的一致性  </li>
+</ul>
+<p><strong>复制的特点</strong>  </p>
+<ul>
+<li>N个节点的集群  </li>
+<li>任何节点可作为主节点  </li>
+<li>所有写入操作都在主节点  </li>
+<li>自动故障转移  </li>
+<li>自动恢复  </li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>你一打赏，我就写得更来劲了</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/buy.jpg" alt="Unknown404 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Unknown404 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Unknown404</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://haochen95.com/2019/03/02/MongoDB语法大全/" title="MongoDB语法大全">http://haochen95.com/2019/03/02/MongoDB语法大全/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MongoDb/" rel="tag"><i class="fa fa-tag"></i> MongoDb</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/02/MongoDB和Python的交互/" rel="next" title="MongoDB和Python的交互">
+                <i class="fa fa-chevron-left"></i> MongoDB和Python的交互
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/02/MySQL的基本语法及在python中的实现/" rel="prev" title="MySQL的基本语法及在python中的实现">
+                MySQL的基本语法及在python中的实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+			 <a href="/">
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Unknown404">
+			 </a>
+            
+              <p class="site-author-name" itemprop="name">Unknown404</p>
+              <p class="site-description motion-element" itemprop="description">Be proud of who you are, and not ashamed of how someone else sees you</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/haochen95" title="GitHub &rarr; https://github.com/haochen95" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:haochen273@gmail.com" title="E-Mail &rarr; mailto:haochen273@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://www.zhihu.com/people/Bricker" title="知乎 &rarr; http://www.zhihu.com/people/Bricker" rel="noopener" target="_blank"><i class="fa fa-fw fa-quora"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="skype:haochen?call|chat" title="Skype &rarr; skype:haochen?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/weblog" title="/weblog">建站日志</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/haochen273/" title="https://www.cnblogs.com/haochen273/" rel="noopener" target="_blank">CNBlog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/haochen95" title="https://github.com/haochen95" rel="noopener" target="_blank">个人首页</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runtofuture.cn/gitbooks/" title="https://www.runtofuture.cn/gitbooks/" rel="noopener" target="_blank">传智播客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-MongoDB简介"><span class="nav-number">1.</span> <span class="nav-text">1.MongoDB简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-MongoDB特点"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.MongoDB特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-MongoDB与MySQL的区别"><span class="nav-number">1.2.</span> <span class="nav-text">1.2.MongoDB与MySQL的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-MongoDB三元素"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.MongoDB三元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-window中启动mongodb的服务"><span class="nav-number">1.4.</span> <span class="nav-text">1.4. window中启动mongodb的服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-数据库的语法"><span class="nav-number">2.</span> <span class="nav-text">2. 数据库的语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-数据库语法"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 数据库语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-集合语法"><span class="nav-number">2.2.</span> <span class="nav-text">2.1. 集合语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-支持的数据类型"><span class="nav-number">2.3.</span> <span class="nav-text">2.2. 支持的数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-数据库的实际操作"><span class="nav-number">3.</span> <span class="nav-text">3. 数据库的实际操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-增修删"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 增修删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-查询操作"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 查询操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本查询"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.基本查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）-比较运算符"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">1） 比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）逻辑运算符"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">2）逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）范围运算符"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">3）范围运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4）支持正则表达式"><span class="nav-number">3.2.1.4.</span> <span class="nav-text">4）支持正则表达式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-自定义函数查询"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 自定义函数查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查询的扩展功能"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.查询的扩展功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1）Limit-Skip"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">1）Limit + Skip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2）投影"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">2）投影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）排序"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">3）排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）统计个数"><span class="nav-number">3.2.3.4.</span> <span class="nav-text">3）统计个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3）消除重复"><span class="nav-number">3.2.3.5.</span> <span class="nav-text">3）消除重复</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-MongoDB的高级操作"><span class="nav-number">4.</span> <span class="nav-text">4.MongoDB的高级操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-聚合aggregate"><span class="nav-number">4.1.</span> <span class="nav-text">4.1. 聚合aggregate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-group"><span class="nav-number">4.1.1.</span> <span class="nav-text">4.1.1. $group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-match"><span class="nav-number">4.1.2.</span> <span class="nav-text">4.1.2. $match</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-project"><span class="nav-number">4.1.3.</span> <span class="nav-text">4.1.3.$project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-4-sort"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.1.4. $sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-5-limit-skip"><span class="nav-number">4.1.5.</span> <span class="nav-text">4.1.5. $limit+skip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-6-unwind"><span class="nav-number">4.1.6.</span> <span class="nav-text">4.1.6. $unwind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-索引"><span class="nav-number">4.2.</span> <span class="nav-text">4.2. 索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-安全-超级管理员和普通用户创建"><span class="nav-number">4.3.</span> <span class="nav-text">4.3. 安全:超级管理员和普通用户创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-数据备份和恢复"><span class="nav-number">4.4.</span> <span class="nav-text">4.4. 数据备份和恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-MongoDB复制"><span class="nav-number">4.4.1.</span> <span class="nav-text">4.1. MongoDB复制</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Unknown404</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+      <div>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      </div>
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.8" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+  
+  <script id="dsq-count-scr" src="https://HaoChen.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://haochen95.com/2019/03/02/MongoDB语法大全/";
+    this.page.identifier = "2019/03/02/MongoDB语法大全/";
+    this.page.title = 'MongoDB语法大全';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://HaoChen.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    $(function() {
+      var offsetTop = $('#comments').offset().top - $(window).height();
+      if (offsetTop <= 0) {
+        // load directly when there's no a scrollbar
+        loadComments();
+      } else {
+        $(window).on('scroll.disqus_scroll', function() {
+          // offsetTop may changes because of manually resizing browser window or lazy loading images.
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          var scrollTop = $(window).scrollTop();
+
+          // pre-load comments a bit? (margin or anything else)
+          if (offsetTop - scrollTop < 60) {
+            $(window).off('.disqus_scroll');
+            loadComments();
+          }
+        });
+      }
+    });
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + '1IfjJjPRfmBmiLBFaOS8rdEc-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': '1IfjJjPRfmBmiLBFaOS8rdEc-gzGzoHsz',
+                'X-LC-Key': 'YpUGzIPsG8KwIojagp9DrDbx',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 17001,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
+
+  
+  
+  
+  <script src="/lib/pangu/dist/pangu.min.js?v=3.3"></script>
+  <script>pangu.spacingPage();</script>
+
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
