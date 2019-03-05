@@ -141,7 +141,7 @@
 <meta property="og:site_name" content="Unknown404">
 <meta property="og:description" content="[TOC] 1.CSS基础语法css样式是由一条和多条以分好隔开的样式声明组成 1&amp;lt;p style=&quot;color:red;font-size:50px;&quot;&amp;gt;这是一段文本&amp;lt;/p&amp;gt; 1.1. 创建CSS样式表的三种方法元素内嵌样式123456789101112&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&amp;gt;  &amp;lt;h">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-05T07:10:43.952Z">
+<meta property="og:updated_time" content="2019-03-05T15:58:50.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS语法教程01">
 <meta name="twitter:description" content="[TOC] 1.CSS基础语法css样式是由一条和多条以分好隔开的样式声明组成 1&amp;lt;p style=&quot;color:red;font-size:50px;&quot;&amp;gt;这是一段文本&amp;lt;/p&amp;gt; 1.1. 创建CSS样式表的三种方法元素内嵌样式123456789101112&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&amp;gt;  &amp;lt;h">
@@ -477,12 +477,24 @@
                 
               
 
-              <time title="创建时间：2019-03-05 16:10:23 / 修改时间：16:10:43" itemprop="dateCreated datePublished" datetime="2019-03-05T16:10:23+09:00">2019-03-05</time>
+              <time title="创建时间：2019-03-05 16:10:23" itemprop="dateCreated datePublished" datetime="2019-03-05T16:10:23+09:00">2019-03-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 00:58:50" itemprop="dateModified" datetime="2019-03-06T00:58:50+09:00">2019-03-06</time>
               
             
           </span>
@@ -711,7 +723,143 @@
 <p>在css文件中</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">charset</span> <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 分组选择器 */</span></span><br><span class="line"><span class="comment">/* 匹配所有的p,b,i,span元素 */</span></span><br><span class="line"><span class="selector-tag">p</span>,<span class="selector-tag">b</span>,<span class="selector-tag">i</span>,<span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#abc</span>, <span class="selector-class">.abc</span>, <span class="selector-tag">i</span>, <span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 后代选择器 */</span></span><br><span class="line"><span class="comment">/* 不在乎b到底是第几代 */</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">b</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子选择器 */</span></span><br><span class="line"><span class="comment">/* b只能是p的儿子，孙子就不行了 */</span></span><br><span class="line"><span class="selector-tag">p</span>&gt;<span class="selector-tag">b</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 相邻兄弟选择器 */</span></span><br><span class="line"><span class="comment">/* 在html中，两个元素靠在一起 */</span></span><br><span class="line"><span class="selector-tag">p</span>+<span class="selector-tag">b</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 普通兄弟选择器 */</span></span><br><span class="line"><span class="comment">/* 中间可以有其他元素隔开 */</span></span><br><span class="line"><span class="selector-tag">p</span>~<span class="selector-tag">b</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2-7-伪元素选择器"><a href="#2-7-伪元素选择器" class="headerlink" title="2.7. 伪元素选择器"></a>2.7. 伪元素选择器</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* 块级首行 */</span></span><br><span class="line"><span class="comment">/* 在p,div，body等块级元素才有效果 */</span></span><br><span class="line"><span class="selector-pseudo">::first-line</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 块级首字母 */</span></span><br><span class="line"><span class="selector-pseudo">::first-letter</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 文本前插入内容 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'点击-'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 文本后插入内容 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'搜索'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-8-伪类选择器"><a href="#2-8-伪类选择器" class="headerlink" title="2.8. 伪类选择器"></a>2.8. 伪类选择器</h2>
+<h2 id="2-8-伪类选择器"><a href="#2-8-伪类选择器" class="headerlink" title="2.8. 伪类选择器"></a>2.8. 伪类选择器</h2><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:root</code></td>
+<td>根元素选择器</td>
+<td>选择文档的根元素</td>
+</tr>
+<tr>
+<td><code>:first-child</code></td>
+<td>子元素选择器</td>
+<td>选择元素的第一个子元素</td>
+</tr>
+<tr>
+<td><code>:last-child</code></td>
+<td>子元素选择器</td>
+<td>选择元素的最后一个子元素</td>
+</tr>
+<tr>
+<td><code>:only-child</code></td>
+<td>子元素选择器</td>
+<td>选择元素中的唯一子元素</td>
+</tr>
+<tr>
+<td><code>:only-of-type</code></td>
+<td>子元素选择器</td>
+<td>选择指定类型的唯一元素</td>
+</tr>
+<tr>
+<td><code>:nth-child</code></td>
+<td>子元素选择器</td>
+<td>选择指定N个子元素</td>
+</tr>
+<tr>
+<td><code>:enabled</code></td>
+<td>UI选择器</td>
+<td>选择启用状态元素</td>
+</tr>
+<tr>
+<td><code>:disabled</code></td>
+<td>UI选择器</td>
+<td>选择禁用状态元素</td>
+</tr>
+<tr>
+<td><code>:checked</code></td>
+<td>UI选择器</td>
+<td>选择被选中input勾选元素</td>
+</tr>
+<tr>
+<td><code>:default</code></td>
+<td>UI选择器</td>
+<td>选择默认元素</td>
+</tr>
+<tr>
+<td><code>:valid</code></td>
+<td>UI选择器</td>
+<td>验证有效选择input元素</td>
+</tr>
+<tr>
+<td><code>:invalid</code></td>
+<td>UI选择器</td>
+<td>验证无效选择input元素</td>
+</tr>
+<tr>
+<td><code>:required</code></td>
+<td>UI选择器</td>
+<td>有require属性的元素</td>
+</tr>
+<tr>
+<td><code>:optional</code></td>
+<td>UI选择器</td>
+<td>没有required属性的元素</td>
+</tr>
+<tr>
+<td><code>:link</code></td>
+<td>动态选择器</td>
+<td>未访问的超链接元素</td>
+</tr>
+<tr>
+<td><code>:visited</code></td>
+<td>动态选择器</td>
+<td>已经访问的超链接元素</td>
+</tr>
+<tr>
+<td><code>:hover</code></td>
+<td>动态选择器</td>
+<td>悬停在超链接上的元素</td>
+</tr>
+<tr>
+<td><code>:active</code></td>
+<td>动态选择器</td>
+<td>激活超链接上的元素</td>
+</tr>
+<tr>
+<td><code>:focus</code></td>
+<td>动态选择器</td>
+<td>获取焦点的元素</td>
+</tr>
+<tr>
+<td><code>:not</code></td>
+<td>其他选择器</td>
+<td>否定选择的元素</td>
+</tr>
+<tr>
+<td><code>:empty</code></td>
+<td>其他选择器</td>
+<td>选择没有内容的元素</td>
+</tr>
+<tr>
+<td><code>:lang</code></td>
+<td>其他选择器</td>
+<td>选择包含lang属性的元素</td>
+</tr>
+<tr>
+<td><code>:target</code></td>
+<td>其他选择器</td>
+<td>选取URL片段标识指向元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-8-1-结构性伪类选择器"><a href="#2-8-1-结构性伪类选择器" class="headerlink" title="2.8.1. 结构性伪类选择器"></a>2.8.1. 结构性伪类选择器</h3><p>根据元素在文档中的位置选择元素，伪类都需要加入前置选择器来限制范围  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* ul&gt;li 来限制范围 */</span></span><br><span class="line"><span class="comment">/* 选择第一个子元素 */</span></span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:only-child</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 选择第二个儿子 */</span></span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2)</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 选择倒数第二个儿子 */</span></span><br><span class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-last-child(2)</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">p</span><span class="selector-pseudo">:only-of-type</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">p</span><span class="selector-pseudo">:nth-of-type(2)</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">p</span><span class="selector-pseudo">:nth-last-of-type(2)</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS语法<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是儿子1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是儿子2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是儿子3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是儿子4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>这是另外一个段落<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-8-2-UI伪类选择器"><a href="#2-8-2-UI伪类选择器" class="headerlink" title="2.8.2. UI伪类选择器"></a>2.8.2. UI伪类选择器</h3><p>主要用于匹配表单form控件  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:enabled</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:disabled</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:checked</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:valid</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:invalid</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">disabled</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"checkbox"</span> <span class="attr">checked</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">"checkbox"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">required</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-8-3-动态选择器"><a href="#2-8-3-动态选择器" class="headerlink" title="2.8.3. 动态选择器"></a>2.8.3. 动态选择器</h3><p>跟鼠标有关  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 悬停状态的颜色 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 鼠标点下去不松的状态 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* focus是对文本框的设置 */</span></span><br><span class="line"><span class="comment">/* 获取光标焦点时的样式 */</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">"www.baidu.com"</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-8-4-其他选择器"><a href="#2-8-4-其他选择器" class="headerlink" title="2.8.4. 其他选择器"></a>2.8.4. 其他选择器</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* 选择除baidu外的其他URL */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[href*="baidu"]</span>)&#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:empty</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:lang(en)</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -1085,7 +1233,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-CSS基础语法"><span class="nav-number">1.</span> <span class="nav-text">1.CSS基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-创建CSS样式表的三种方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 创建CSS样式表的三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素内嵌样式"><span class="nav-number">1.1.1.</span> <span class="nav-text">元素内嵌样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文档内嵌样式"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.文档内嵌样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-外部引入样式"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.外部引入样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-样式层叠和继承"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 样式层叠和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-样式层叠"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.2. 样式层叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-样式继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.3. 样式继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-CSS选择器"><span class="nav-number">2.</span> <span class="nav-text">2. CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-通用选择器"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 通用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-元素选择器"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 元素选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-id选择"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. id选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-类选择器"><span class="nav-number">2.4.</span> <span class="nav-text">2.4. 类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-属性选择器"><span class="nav-number">2.5.</span> <span class="nav-text">2.5. 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-复合选择器"><span class="nav-number">2.6.</span> <span class="nav-text">2.6. 复合选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-伪元素选择器"><span class="nav-number">2.7.</span> <span class="nav-text">2.7. 伪元素选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-伪类选择器"><span class="nav-number">2.8.</span> <span class="nav-text">2.8. 伪类选择器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-CSS基础语法"><span class="nav-number">1.</span> <span class="nav-text">1.CSS基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-创建CSS样式表的三种方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 创建CSS样式表的三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素内嵌样式"><span class="nav-number">1.1.1.</span> <span class="nav-text">元素内嵌样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文档内嵌样式"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.文档内嵌样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-外部引入样式"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.外部引入样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-样式层叠和继承"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 样式层叠和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-样式层叠"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.2. 样式层叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-样式继承"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.2.3. 样式继承</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-CSS选择器"><span class="nav-number">2.</span> <span class="nav-text">2. CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-通用选择器"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 通用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-元素选择器"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 元素选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-id选择"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. id选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-类选择器"><span class="nav-number">2.4.</span> <span class="nav-text">2.4. 类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-属性选择器"><span class="nav-number">2.5.</span> <span class="nav-text">2.5. 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-复合选择器"><span class="nav-number">2.6.</span> <span class="nav-text">2.6. 复合选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-伪元素选择器"><span class="nav-number">2.7.</span> <span class="nav-text">2.7. 伪元素选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-伪类选择器"><span class="nav-number">2.8.</span> <span class="nav-text">2.8. 伪类选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-1-结构性伪类选择器"><span class="nav-number">2.8.1.</span> <span class="nav-text">2.8.1. 结构性伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-2-UI伪类选择器"><span class="nav-number">2.8.2.</span> <span class="nav-text">2.8.2. UI伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-3-动态选择器"><span class="nav-number">2.8.3.</span> <span class="nav-text">2.8.3. 动态选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-4-其他选择器"><span class="nav-number">2.8.4.</span> <span class="nav-text">2.8.4. 其他选择器</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
