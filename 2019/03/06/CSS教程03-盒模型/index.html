@@ -133,24 +133,18 @@
 
 
 
-  <meta name="description" content="1.客户端/服务端架构    服务端的作用: 等待客户端的请求，并相应他们提供服务，然后等待更多请求   客户端的作用： 发送请给给服务端以获取相关信息    注意：    客户端和服务器交互之前，需要进行一些必要的设置： 设置通信端点(比如，你要上网，必须要网线插口才可以)   客户端需要做的就是创建一个它的单一通信端点，然后建立一个到服务器的连接，然后，客户端就可以发送请求，一旦请求诶服务器处">
-<meta name="keywords" content="Socket">
+  <meta name="description" content="[TOC]   1.CSS盒模型元素的尺寸，大小，内外边距和溢出问题   1.1. 元素尺寸   属性 说明 属性值     width 元素的宽度 auto,长度值或百分比（相对于body长度）   height 元素的高度 auto,长度值或百分比（相对于body长度）.   min-width 元素的最小宽度 auto,长度值或百分比   min-height 元素的最小高度 auto,长度">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP和UDP套接字介绍及Socket模块的使用">
-<meta property="og:url" content="http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/index.html">
+<meta property="og:title" content="CSS教程03-盒模型">
+<meta property="og:url" content="http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/index.html">
 <meta property="og:site_name" content="Unknown404">
-<meta property="og:description" content="1.客户端/服务端架构    服务端的作用: 等待客户端的请求，并相应他们提供服务，然后等待更多请求   客户端的作用： 发送请给给服务端以获取相关信息    注意：    客户端和服务器交互之前，需要进行一些必要的设置： 设置通信端点(比如，你要上网，必须要网线插口才可以)   客户端需要做的就是创建一个它的单一通信端点，然后建立一个到服务器的连接，然后，客户端就可以发送请求，一旦请求诶服务器处">
+<meta property="og:description" content="[TOC]   1.CSS盒模型元素的尺寸，大小，内外边距和溢出问题   1.1. 元素尺寸   属性 说明 属性值     width 元素的宽度 auto,长度值或百分比（相对于body长度）   height 元素的高度 auto,长度值或百分比（相对于body长度）.   min-width 元素的最小宽度 auto,长度值或百分比   min-height 元素的最小高度 auto,长度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/375px-Client-server-model.svg.png">
-<meta property="og:image" content="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_1.PNG">
-<meta property="og:image" content="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_2.PNG">
-<meta property="og:image" content="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_3.PNG">
-<meta property="og:image" content="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_4.PNG">
-<meta property="og:updated_time" content="2019-03-01T16:03:35.193Z">
+<meta property="og:updated_time" content="2019-03-06T04:18:55.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP和UDP套接字介绍及Socket模块的使用">
-<meta name="twitter:description" content="1.客户端/服务端架构    服务端的作用: 等待客户端的请求，并相应他们提供服务，然后等待更多请求   客户端的作用： 发送请给给服务端以获取相关信息    注意：    客户端和服务器交互之前，需要进行一些必要的设置： 设置通信端点(比如，你要上网，必须要网线插口才可以)   客户端需要做的就是创建一个它的单一通信端点，然后建立一个到服务器的连接，然后，客户端就可以发送请求，一旦请求诶服务器处">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/375px-Client-server-model.svg.png">
+<meta name="twitter:title" content="CSS教程03-盒模型">
+<meta name="twitter:description" content="[TOC]   1.CSS盒模型元素的尺寸，大小，内外边距和溢出问题   1.1. 元素尺寸   属性 说明 属性值     width 元素的宽度 auto,长度值或百分比（相对于body长度）   height 元素的高度 auto,长度值或百分比（相对于body长度）.   min-width 元素的最小宽度 auto,长度值或百分比   min-height 元素的最小高度 auto,长度">
 
 
 
@@ -159,7 +153,7 @@
 
 
 
-  <link rel="canonical" href="http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/">
+  <link rel="canonical" href="http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/">
 
 
 
@@ -169,7 +163,7 @@
   };
 </script>
 
-  <title>TCP和UDP套接字介绍及Socket模块的使用 | Unknown404</title>
+  <title>CSS教程03-盒模型 | Unknown404</title>
   
 
 
@@ -438,7 +432,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/">
+    <link itemprop="mainEntityOfPage" href="http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Unknown404">
@@ -455,7 +449,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TCP和UDP套接字介绍及Socket模块的使用
+          <h1 class="post-title" itemprop="name headline">CSS教程03-盒模型
 
               
             
@@ -483,7 +477,7 @@
                 
               
 
-              <time title="创建时间：2019-03-02 01:02:44 / 修改时间：01:03:35" itemprop="dateCreated datePublished" datetime="2019-03-02T01:02:44+09:00">2019-03-02</time>
+              <time title="创建时间：2019-03-06 13:18:07 / 修改时间：13:18:55" itemprop="dateCreated datePublished" datetime="2019-03-06T13:18:07+09:00">2019-03-06</time>
             
 
             
@@ -505,7 +499,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python网络编程/" itemprop="url" rel="index"><span itemprop="name">Python网络编程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端开发/" itemprop="url" rel="index"><span itemprop="name">前端开发</span></a></span>
 
                 
                 
@@ -524,8 +518,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/" itemprop="commentCount"></span>
+                <a href="/2019/03/06/CSS教程03-盒模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/06/CSS教程03-盒模型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -533,7 +527,7 @@
 
           
           
-            <span id="/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/" class="leancloud_visitors" data-flag-title="TCP和UDP套接字介绍及Socket模块的使用">
+            <span id="/2019/03/06/CSS教程03-盒模型/" class="leancloud_visitors" data-flag-title="CSS教程03-盒模型">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -571,219 +565,173 @@
       
 
       
-        <h1 id="1-客户端-服务端架构"><a href="#1-客户端-服务端架构" class="headerlink" title="1.客户端/服务端架构"></a>1.客户端/服务端架构</h1><div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/375px-Client-server-model.svg.png"></div>
-
-
-<ul>
-<li>服务端的作用: 等待客户端的请求，并相应他们提供服务，然后等待更多请求  </li>
-<li>客户端的作用： 发送请给给服务端以获取相关信息  </li>
-</ul>
-<p>注意：  </p>
-<ol>
-<li>客户端和服务器交互之前，需要进行一些必要的设置： 设置通信端点(比如，你要上网，必须要网线插口才可以)  </li>
-<li>客户端需要做的就是创建一个它的单一通信端点，然后建立一个到服务器的连接，然后，客户端就可以发送请求，一旦请求诶服务器处理，且客户端收到了请求的结果，此次通信就结束了  </li>
-</ol>
-<h1 id="2-套接字"><a href="#2-套接字" class="headerlink" title="2. 套接字"></a>2. 套接字</h1><h1 id="3-Python中的网络编程socket"><a href="#3-Python中的网络编程socket" class="headerlink" title="3. Python中的网络编程socket"></a>3. Python中的网络编程socket</h1><h2 id="3-1-socket-模块函数"><a href="#3-1-socket-模块函数" class="headerlink" title="3.1. socket()模块函数"></a>3.1. socket()模块函数</h2><p>创建套接字的语法如下：  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socket.socket(socket_family, socket_type, protocol=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>socket_family</code>： 是<code>AF_UNIX</code>(基于文件的套接字)和<code>AF_INET</code>(基于网络的套接字)  </li>
-<li><code>socket_type</code>: <code>SOCK_STREAM</code>(面向连接的套接字，也称为<code>TCP/TP</code>套接字) + <code>SOCK_DGRAM</code>(无连接套接字，也称为<code>UDP/TP</code>套接字)  </li>
-<li><code>protocol</code>：一般为0，不用设置这个  </li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">tcpSock = socket(socket.AF_INET,socket.SOCK_STREAM)   <span class="comment"># 创建TCP/TP套接字</span></span><br><span class="line">udpSock = socket(socket.AF_INET,socket.SOCK_DGRAM)    <span class="comment"># 创建UDP/IP套接字</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-2-套接字对象的方法"><a href="#3-2-套接字对象的方法" class="headerlink" title="3.2. 套接字对象的方法"></a>3.2. 套接字对象的方法</h2><table>
+        <p>[TOC]  </p>
+<h1 id="1-CSS盒模型"><a href="#1-CSS盒模型" class="headerlink" title="1.CSS盒模型"></a>1.CSS盒模型</h1><p>元素的尺寸，大小，内外边距和溢出问题  </p>
+<h2 id="1-1-元素尺寸"><a href="#1-1-元素尺寸" class="headerlink" title="1.1. 元素尺寸"></a>1.1. 元素尺寸</h2><table>
 <thead>
 <tr>
-<th>名称</th>
+<th>属性</th>
 <th>说明</th>
-<th>类别</th>
+<th>属性值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>s.bind()</td>
-<td>将地址(主机名-端口号对)绑定到套接字上</td>
-<td>服务器套接字方法</td>
+<td><code>width</code></td>
+<td>元素的宽度</td>
+<td>auto,长度值或百分比（相对于body长度）</td>
 </tr>
 <tr>
-<td>s.listen()</td>
-<td>设置并启动TCP监听器</td>
-<td></td>
+<td><code>height</code></td>
+<td>元素的高度</td>
+<td>auto,长度值或百分比（相对于body长度）.</td>
 </tr>
 <tr>
-<td>s.accept()</td>
-<td>被动接受TCP客户端连接，一直等待直到连接到达(阻塞)</td>
-<td></td>
+<td><code>min-width</code></td>
+<td>元素的最小宽度</td>
+<td>auto,长度值或百分比</td>
 </tr>
 <tr>
-<td>s.connect()</td>
-<td>主动发起TCP服务器连接</td>
-<td>客户端套接字方法</td>
+<td><code>min-height</code></td>
+<td>元素的最小高度</td>
+<td>auto,长度值或百分比</td>
 </tr>
 <tr>
-<td>s.connect_ex()</td>
-<td>connect的扩展，会以错误码的形式返回问题</td>
-<td></td>
+<td><code>max-width</code></td>
+<td>元素的最大宽度</td>
+<td>auto,长度值或百分比</td>
 </tr>
 <tr>
-<td>s.recv()</td>
-<td>接收TCP信息</td>
-<td>普通的套接字方法</td>
-</tr>
-<tr>
-<td>s.recv_into()</td>
-<td>接收TCP信息到指定发缓存区</td>
-<td></td>
-</tr>
-<tr>
-<td>s.send()</td>
-<td>发送TCP信息</td>
-<td></td>
-</tr>
-<tr>
-<td>s.sendall()</td>
-<td>完整地发送TCP信息</td>
-<td></td>
-</tr>
-<tr>
-<td>s.recvfrom()</td>
-<td>接收UDP信息</td>
-<td></td>
-</tr>
-<tr>
-<td>s.recvfrom_into()</td>
-<td>接收UDP信息到指定的缓冲区</td>
-<td></td>
-</tr>
-<tr>
-<td>s.sendto()</td>
-<td>发送UDP信息</td>
-<td></td>
-</tr>
-<tr>
-<td>s.getpeername()</td>
-<td>连接到套接字TCP的远程地址</td>
-<td></td>
-</tr>
-<tr>
-<td>s.getsockname()</td>
-<td>当前套接字的地址</td>
-<td></td>
-</tr>
-<tr>
-<td>s.getsockopt()</td>
-<td>返回给定套接字选项的值</td>
-<td></td>
-</tr>
-<tr>
-<td>s.setsockopt()</td>
-<td>设置给定套接字选项的值</td>
-<td></td>
-</tr>
-<tr>
-<td>s.shutdown()</td>
-<td>关闭连接</td>
-<td></td>
-</tr>
-<tr>
-<td>s.close()</td>
-<td>关闭套接字</td>
-<td></td>
-</tr>
-<tr>
-<td>s.detach()</td>
-<td>在未关闭文件描述符的情况下关闭套接字，返回文件描述符</td>
-<td></td>
-</tr>
-<tr>
-<td>s.ioctl()</td>
-<td>控制套接字的模式</td>
-<td></td>
-</tr>
-<tr>
-<td>s.setblocking()</td>
-<td>设置套接字的阻塞或者非阻塞模式</td>
-<td>面向阻塞的套接字方法</td>
-</tr>
-<tr>
-<td>s.settimeout()</td>
-<td>设置阻塞套接字的操作的超时时间</td>
-<td></td>
-</tr>
-<tr>
-<td>s.gettimeout()</td>
-<td>获取阻塞套接字操作的超时时间</td>
-<td></td>
-</tr>
-<tr>
-<td>s.fileno()</td>
-<td>套接字的文件描述符</td>
-<td>面向文件的套接字方法</td>
-</tr>
-<tr>
-<td>s.makefile()</td>
-<td>创建与套接字关联的文件对象</td>
-<td></td>
-</tr>
-<tr>
-<td>s.family</td>
-<td>套接字家族</td>
-<td>数据类型</td>
-</tr>
-<tr>
-<td>s.type</td>
-<td>套接字类型</td>
-<td></td>
-</tr>
-<tr>
-<td>s.proto</td>
-<td>套接字协议</td>
+<td><code>max-height</code></td>
+<td>元素的最大高度</td>
+<td>auto,长度值或百分比</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-3-创建TCP服务器"><a href="#3-3-创建TCP服务器" class="headerlink" title="3.3. 创建TCP服务器"></a>3.3. 创建TCP服务器</h2><p>这里我给出了创建TCP服务器的一般流程</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ss = socket()              <span class="comment"># 创建服务器套接字</span></span><br><span class="line">ss.bind()                  <span class="comment"># 套接字与地址绑定</span></span><br><span class="line">ss.listen()                <span class="comment"># 监听连接</span></span><br><span class="line">inf_loop:                  <span class="comment"># 服务器无线循环中</span></span><br><span class="line">  cs = ss.accept()         <span class="comment"># 接收客户端连接</span></span><br><span class="line">  comm_loop:               <span class="comment"># 通信循环</span></span><br><span class="line">    cs.recv/cs.send()      <span class="comment"># 对话：接收或者发送</span></span><br><span class="line">  cs.close()               <span class="comment"># 关闭客户端套接字</span></span><br><span class="line">ss.close()                 <span class="comment"># 关闭服务端套接字(可选)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-元素内边距"><a href="#1-2-元素内边距" class="headerlink" title="1.2. 元素内边距"></a>1.2. 元素内边距</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding-top</code></td>
+<td>顶部内边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>padding-bottom</code></td>
+<td>底部内边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>padding-left</code></td>
+<td>左边内边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>padding-right</code></td>
+<td>右边内边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>padding</code></td>
+<td>简写属性</td>
+<td>1-4个长度值或者百分比</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="comment">/* 上下左右同时空出10px */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 上下10个，左右20个 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 上，右，下，左 */</span></span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">20px</span>, <span class="number">10px</span>, <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-元素外边距"><a href="#1-3-元素外边距" class="headerlink" title="1.3. 元素外边距"></a>1.3. 元素外边距</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin-top</code></td>
+<td>顶部外边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>margin-bottom</code></td>
+<td>底部外边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>margin-left</code></td>
+<td>左边外边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>margin-right</code></td>
+<td>右边外边距</td>
+<td>长度值或者百分比</td>
+</tr>
+<tr>
+<td><code>margin</code></td>
+<td>简写属性</td>
+<td>1-4个长度值或者百分比</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-4-处理溢出"><a href="#1-4-处理溢出" class="headerlink" title="1.4. 处理溢出"></a>1.4. 处理溢出</h2><p>当设置div长度后，文本长度超过div尺寸就会存在溢出，那么如何处理溢出后的内容呢？  </p>
 <ul>
-<li>所有套接字都需要通过socket.socket()来创建来占用一个端口bind()并等待客户端的请求  </li>
-<li>因为TCP是面向连接的通信，在执行请求前，需要设置一些监听设备listen()，一旦完成，就开始服务器的无线循环inf_loop</li>
-<li>一旦服务器接收accpet()了一个连接，就会返回一个独立的客户端套接字cs，用它来与即将到来的信息进行交换(类似于主线员将这个客户切换给一个专用的客服代表，这样主线员就可以空出来继续接收连接)</li>
-<li>通信开始，执行相关操作cs.recv或者cs.send()  </li>
-<li>完成通信，关闭客户端套接字(切断客服代表的电话)cs.close()</li>
+<li>通过<code>overflow</code>系列样式来控制  </li>
+<li><code>overflow</code>的值如下：  </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> ctime</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">''</span></span><br><span class="line">PORT = <span class="number">21567</span></span><br><span class="line">BUFSIZ = <span class="number">1024</span></span><br><span class="line">ADDR = (HOST,PORT)</span><br><span class="line"></span><br><span class="line">tcpSerSock = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">tcpSerSock.bind(ADDR)</span><br><span class="line">tcpSerSock.listen(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">"等待连接中...."</span>)</span><br><span class="line">    tcpCliSock, addr = tcpSerSock.accept()</span><br><span class="line">    print(<span class="string">"获取了一个的连接: "</span>,addr)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        data = tcpCliSock.recv(BUFSIZ)</span><br><span class="line">        SendText = <span class="string">'Thanks for your connections---'</span> + data.decode()</span><br><span class="line"></span><br><span class="line">        print(type(data))</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        tcpCliSock.send(SendText.encode())</span><br><span class="line"></span><br><span class="line">    tcpCliSock.close()</span><br><span class="line">tcpSerSock.close()</span><br></pre></td></tr></table></figure>
-<h2 id="3-4-创建TCP客户端"><a href="#3-4-创建TCP客户端" class="headerlink" title="3.4. 创建TCP客户端"></a>3.4. 创建TCP客户端</h2><p>这里我们给出创建TCP客户端的模板  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cs = socket()          <span class="comment"># 创建客户端套接字</span></span><br><span class="line">cs.connect()           <span class="comment"># 尝试连接服务器</span></span><br><span class="line">comm_loop:             <span class="comment"># 通信循环</span></span><br><span class="line">  cs.send()/cs.recv()  <span class="comment"># 对话发送，接收</span></span><br><span class="line">cs.close()             <span class="comment"># 关闭客户端套接字</span></span><br></pre></td></tr></table></figure>
-<p>标准的TCP实例如下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">'localhost'</span></span><br><span class="line">PORT = <span class="number">1565</span></span><br><span class="line">BUFSIZ = <span class="number">1024</span></span><br><span class="line">ADDR = (HOST,PORT)</span><br><span class="line"></span><br><span class="line">tcpCliSock = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">tcpCliSock.bind(ADDR)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    data = input(<span class="string">'&gt;'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    tcpCliSock.send(data.encode())</span><br><span class="line">    data = tcpCliSock.recv(BUFSIZ)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> data:       <span class="comment"># 服务器端终止且对recv()方法的调用失败</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(data.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">tcpCliSock.close()</span><br></pre></td></tr></table></figure>
-<h2 id="3-5-运行TCP服务-客户端"><a href="#3-5-运行TCP服务-客户端" class="headerlink" title="3.5. 运行TCP服务-客户端"></a>3.5. 运行TCP服务-客户端</h2><ul>
-<li>首先运行TCP服务端  </li>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code></td>
+<td>浏览器自行处理溢出内容，有溢出就显示滚动条</td>
+</tr>
+<tr>
+<td><code>hidden</code></td>
+<td>有溢出就直接剪掉溢出内容</td>
+</tr>
+<tr>
+<td><code>scroll</code></td>
+<td>不管是否溢出，都会出现滚动条，但不同平台和浏览器显示方式不同</td>
+</tr>
+<tr>
+<td><code>visible</code></td>
+<td>默认值，不管是否溢出，都显示内容</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-CSS盒子类型"><a href="#2-CSS盒子类型" class="headerlink" title="2. CSS盒子类型"></a>2. CSS盒子类型</h1><h2 id="2-1-元素可见性visibility"><a href="#2-1-元素可见性visibility" class="headerlink" title="2.1. 元素可见性visibility"></a>2.1. 元素可见性visibility</h2><ul>
+<li><code>visible</code>： 元素页面可见  </li>
+<li><code>hidden</code>: 元素不可见，但是会占据空间  </li>
+<li><code>collapse</code>: 元素不可见，隐藏表格的行列  </li>
 </ul>
-<div align="center"><img src="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_1.PNG"></div>
-
-
-<ul>
-<li>然后运行TCP客户端，并且输入<code>Python</code>  </li>
-</ul>
-<div align="center"><img src="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_2.PNG"></div>
-
-
-<h2 id="3-6-创建UDP服务器"><a href="#3-6-创建UDP服务器" class="headerlink" title="3.6. 创建UDP服务器"></a>3.6. 创建UDP服务器</h2><p>UDP服务器不像TCP服务器那么多设置，因为UDP服务器不是面向连接的，除了等待传入的连接外，几乎不需要做其他任何工作  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss = socket()</span><br><span class="line">ss.bind()</span><br><span class="line">inf_loop:</span><br><span class="line">  cs = css.recvfrom()/ss.sendto()</span><br></pre></td></tr></table></figure>
-<p><strong>特点：服务器只接受小象，并可能回复数据</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">''</span></span><br><span class="line">PORT = <span class="number">21567</span></span><br><span class="line">BUFSIZ = <span class="number">1024</span></span><br><span class="line">ADDR = (HOST,PORT)</span><br><span class="line"></span><br><span class="line">udpServer = socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">udpServer.bind(ADDR)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    print(<span class="string">"等待连接...."</span>)</span><br><span class="line">    data,addr = udpServer.recvfrom(BUFSIZ)</span><br><span class="line">    print(<span class="string">"获取了一个的连接: "</span>, addr)</span><br><span class="line"></span><br><span class="line">    SendText = <span class="string">'Thanks for your connections---'</span> + data.decode()</span><br><span class="line"></span><br><span class="line">    udpServer.sendto(SendText.encode(),addr)</span><br><span class="line"></span><br><span class="line">udpServer.close()</span><br></pre></td></tr></table></figure>
-<h2 id="3-7-创建UDP客户端"><a href="#3-7-创建UDP客户端" class="headerlink" title="3.7. 创建UDP客户端"></a>3.7. 创建UDP客户端</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">HOST = <span class="string">'localhost'</span></span><br><span class="line">PORT = <span class="number">21567</span></span><br><span class="line">BUFSIZ = <span class="number">1024</span></span><br><span class="line">ADDR = (HOST,PORT)</span><br><span class="line"></span><br><span class="line">udpCliSock = socket(AF_INET,SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    into = input(<span class="string">"&gt;"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> into:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    udpCliSock.sendto(into.encode(),ADDR)</span><br><span class="line"></span><br><span class="line">    data,ADDR = udpCliSock.recvfrom(BUFSIZ)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> data:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(data.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">udpCliSock.close()</span><br></pre></td></tr></table></figure>
-<p>运行服务端，以及客户端  </p>
-<div align="center"><img src="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_3.PNG"></div>
-
-<div align="center"><img src="https://www.cnblogs.com/images/cnblogs_com/haochen273/1389248/o_4.PNG"></div>
-
-
-
-
-<p>参考文献  </p>
-<ul>
-<li><a href="https://www.cnblogs.com/liu-yao/p/5283379.html" target="_blank" rel="noopener">https://www.cnblogs.com/liu-yao/p/5283379.html</a></li>
-</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-元素的盒类型"><a href="#2-2-元素的盒类型" class="headerlink" title="2.2. 元素的盒类型"></a>2.2. 元素的盒类型</h2><p><code>display</code>属性  </p>
+<ol>
+<li><code>block</code>： 盒子为块级元素</li>
+<li><code>inline</code>： 盒子为行内元素 </li>
+<li><code>inline-block</code>： 盒子为行内-块元素</li>
+<li><code>none</code>： 盒子不可见，不占位</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/* 块级元素--》 行内元素 */</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 行内元素---》块级元素 */</span></span><br><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* 全部转为行内-块元素 */</span></span><br><span class="line"><span class="selector-tag">div</span>,<span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-1-块级元素"><a href="#2-2-1-块级元素" class="headerlink" title="2.2.1. 块级元素"></a>2.2.1. 块级元素</h3><p>能够设置元素尺寸，隔离其他元素功能(换行)的元素，比如：<code>&lt;div&gt;,&lt;p&gt;</code>等文档元素  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: silver;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-2-行内元素"><a href="#2-2-2-行内元素" class="headerlink" title="2.2.2. 行内元素"></a>2.2.2. 行内元素</h3><p>行内元素不可用设置元素尺寸大小，它只能自适应，无法隔离其他元素，其他元素会紧跟在其后面，比如<code>&lt;span&gt;,&lt;b&gt;</code>元素等  </p>
+<h3 id="2-2-3-行内-块元素"><a href="#2-2-3-行内-块元素" class="headerlink" title="2.2.3. 行内-块元素"></a>2.2.3. 行内-块元素</h3><p>所谓行内-块元素，可设置元素尺寸，但是无法隔离器其他元素的元素，比如<code>&lt;img&gt;</code> </p>
 
       
     </div>
@@ -847,7 +795,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/" title="TCP和UDP套接字介绍及Socket模块的使用">http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/</a>
+    <a href="http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/" title="CSS教程03-盒模型">http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -860,7 +808,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Socket/" rel="tag"><i class="fa fa-tag"></i> Socket</a>
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           
         </div>
       
@@ -885,8 +833,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/02/Python中SocketServer的使用/" rel="next" title="Python中SocketServer的使用">
-                <i class="fa fa-chevron-left"></i> Python中SocketServer的使用
+              <a href="/2019/03/06/CSS教程02-字体及文本内容设置/" rel="next" title="CSS教程02-字体及文本内容设置">
+                <i class="fa fa-chevron-left"></i> CSS教程02-字体及文本内容设置
               </a>
             
           </div>
@@ -894,10 +842,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/02/正则表达式语法以及re模块的使用/" rel="prev" title="正则表达式语法以及re模块的使用">
-                正则表达式语法以及re模块的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1158,7 +1102,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-客户端-服务端架构"><span class="nav-number">1.</span> <span class="nav-text">1.客户端/服务端架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-套接字"><span class="nav-number">2.</span> <span class="nav-text">2. 套接字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Python中的网络编程socket"><span class="nav-number">3.</span> <span class="nav-text">3. Python中的网络编程socket</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-socket-模块函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. socket()模块函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-套接字对象的方法"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 套接字对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-创建TCP服务器"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 创建TCP服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-创建TCP客户端"><span class="nav-number">3.4.</span> <span class="nav-text">3.4. 创建TCP客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-运行TCP服务-客户端"><span class="nav-number">3.5.</span> <span class="nav-text">3.5. 运行TCP服务-客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-创建UDP服务器"><span class="nav-number">3.6.</span> <span class="nav-text">3.6. 创建UDP服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-创建UDP客户端"><span class="nav-number">3.7.</span> <span class="nav-text">3.7. 创建UDP客户端</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-CSS盒模型"><span class="nav-number">1.</span> <span class="nav-text">1.CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-元素尺寸"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 元素尺寸</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-元素内边距"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 元素内边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-元素外边距"><span class="nav-number">1.3.</span> <span class="nav-text">1.3. 元素外边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-处理溢出"><span class="nav-number">1.4.</span> <span class="nav-text">1.4. 处理溢出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-CSS盒子类型"><span class="nav-number">2.</span> <span class="nav-text">2. CSS盒子类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-元素可见性visibility"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 元素可见性visibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-元素的盒类型"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 元素的盒类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-块级元素"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1. 块级元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-行内元素"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2. 行内元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-行内-块元素"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3. 行内-块元素</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1375,9 +1319,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://haochen95.github.io/2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/";
-    this.page.identifier = "2019/03/02/TCP和UDP套接字介绍及Socket模块的使用/";
-    this.page.title = 'TCP和UDP套接字介绍及Socket模块的使用';
+    this.page.url = "http://haochen95.github.io/2019/03/06/CSS教程03-盒模型/";
+    this.page.identifier = "2019/03/06/CSS教程03-盒模型/";
+    this.page.title = 'CSS教程03-盒模型';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
