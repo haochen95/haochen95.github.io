@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://haochen95.github.io/book/index.html</loc>
+    
+    <lastmod>2019-06-01T11:25:42.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://haochen95.github.io/2019/06/01/gitbook%E7%9A%84%E6%8F%92%E4%BB%B6%E5%92%8C%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2019-06-01T11:12:47.567Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://haochen95.github.io/2019/06/01/Hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2019-06-01T09:33:41.158Z</lastmod>
