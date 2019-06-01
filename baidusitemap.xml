@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://haochen95.github.io/2019/06/01/Hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-06-01</lastmod>
+  </url>  <url>
     <loc>http://haochen95.github.io/2019/03/13/Django%E7%9A%84%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B/</loc>
     <lastmod>2019-03-13</lastmod>
   </url>  <url>
@@ -103,7 +106,7 @@
     <loc>http://haochen95.github.io/2019/03/02/Android%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B1-Activity%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2019-03-01</lastmod>
   </url>  <url>
-    <loc>http://haochen95.github.io/2019/03/01/hello-world/</loc>
+    <loc>http://haochen95.github.io/2019/03/17/hello-world/</loc>
     <lastmod>2019-03-01</lastmod>
   </url>
 </urlset>
