@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://haochen95.github.io/about/index.html</loc>
+    
+    <lastmod>2019-06-02T10:34:55.137Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://haochen95.github.io/book/index.html</loc>
     
     <lastmod>2019-06-01T11:25:42.770Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://haochen95.github.io/2019/06/01/Hexo%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2019-06-01T09:33:41.158Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://haochen95.github.io/about/index.html</loc>
-    
-    <lastmod>2019-06-01T09:30:15.827Z</lastmod>
     
   </url>
   
